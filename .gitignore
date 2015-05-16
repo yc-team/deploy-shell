@@ -1,0 +1,13 @@
+*.DS_store
+*.log
+*.sublime-project
+*.sublime-workspace
+.c9revisions/
+.settings
+
+/app/admin/components/
+/node_modules/
+/dist/
+/test/output/
+/.sass-cache/
+/.tmp/
