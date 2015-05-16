@@ -80,8 +80,9 @@ compare() {
 compare
 
 install() {
-    npm i grunt-cli -g
-    npm i bower -g
+    sudo npm i grunt-cli -g
+    sudo npm i bower -g
+    sudo npm i pm2 -g
     gem sources -r https://rubygems.org/
     gem sources -r https://rubygems.org
     gem sources -r http://rubygems.org
