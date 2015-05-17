@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 _NODE_URL="http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz"
+_NGINX_URL="http://nginx.org/download/nginx-1.6.1.tar.gz"
 
 allpass='0'
 checkfunc(){
@@ -79,6 +80,18 @@ compare() {
 }
 compare
 
+
+download "$_NGINX_URL" "nginx.tar.gz"
+tar -zxvf nginx.tar.gz
+_NIR=`ls -l | grep ^d | awk '{print $NF}'`
+
+
+configure() {
+    cd _NIR
+    ./configure
+}
+configure
+
 install() {
     sudo npm i grunt-cli -g
     sudo npm i bower -g
@@ -100,5 +113,7 @@ clear() {
     cd ..
     `rm -rf $_DIR`
     `rm node.tar.gz`
+    `rm -rf $_NIR`
+    `rm nginx.tar.gz`
 }
 clear
